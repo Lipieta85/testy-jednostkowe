@@ -1,5 +1,4 @@
 const formatDate = timeInSeconds => {
-    console.log(timeInSeconds);
 
     if (timeInSeconds > 60) {
         const minutesBelow60 = Math.floor(timeInSeconds / 60);
@@ -22,22 +21,26 @@ const formatDate = timeInSeconds => {
                 return `${hours}h ${minutes}m ${seconds}s`;
             }
 
-        } else if (seconds === 0) {
+        }
+
+        else if (seconds === 0) {
             return `${minutesBelow60}m`;
 
-        } else {
+        }
+
+        else {
             return `${minutesBelow60}m ${seconds}s`;
         }
 
-    } else if (
+    }
+
+    else if (
         timeInSeconds === 0 ||
         timeInSeconds === null ||
         timeInSeconds === undefined
     ) {
         return `0s`;
-    }
-
-    else {
+    } else {
         return `${timeInSeconds}s`;
     }
 };
